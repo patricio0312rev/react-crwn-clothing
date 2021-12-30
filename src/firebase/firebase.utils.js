@@ -1,6 +1,7 @@
-import { Firebase } from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/auth';
+
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
+import 'firebase/compat/auth';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -14,14 +15,14 @@ const config = {
     measurementId: "G-6QJCKTZ3Q3"
 };
   
-Firebase.initializeApp(config);
+firebase.initializeApp(config);
 
-export const auth = Firebase.auth();
-export const firestore = Firebase.firestore();
+export const auth = firebase.auth();
+export const firestore = firebase.firestore();
 
-const provider = new Firebase.auth.GoogleAuthProvider();
+const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });
 
-export const signInWithGoogle = () => auth.signInWithPopUp(provider);
+export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
-export default Firebase;
+export default firebase;
