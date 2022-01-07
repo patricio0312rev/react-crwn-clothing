@@ -15,10 +15,10 @@ export const fetchCollectionsFailure = (errorMessage) => ({
     payload: errorMessage,
 })
 
+/* Redux Thunk just focuses on functions, just as this funct below */
 export const fetchCollectionsStartAsync = () => {
     return (dispatch) => {
         const collectionRef = firestore.collection('collections');
-        console.log('Start');
         dispatch(fetchCollectionsStart());
 
         /* # Promise pattern
