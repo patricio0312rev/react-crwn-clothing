@@ -9,7 +9,6 @@ import Auth from './pages/auth/auth.component';
 
 import Header from './components/header/header.component';
 
-
 import { connect } from 'react-redux';
 
 import { createStructuredSelector } from 'reselect';
